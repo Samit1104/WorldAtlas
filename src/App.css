@@ -459,22 +459,25 @@ country Card
     font-weight: bold;
     letter-spacing: 0.1rem;
     text-transform: capitalize;
-    color: rgba(255, 255, 255, 0.8);
-    border: 0.05rem solid #fff;
-    background: linear-gradient(71deg, #080509, #1a171c, #080509);
-    /* height: 35px;
+    color: rgba(0, 0, 0, 0.8);
+     border: 0.05rem solid #fff;
+    background: transparent;
+    height: 35px;
     border-radius: 20%;
-    padding: px; */
+    padding: px;
     margin: 30px;
-  background: none;
+    border-bottom:1px solid rgb(185, 184, 184) ;
+
   border: 1px solid white;
-  outline: none;
+
+
   max-width: 190px;
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 9999px;
-  /* box-shadow: inset 2px 5px 10px rgb(106, 101, 101); */
-  color: #fff;
+   /* box-shadow: inset 2px 5px 10px rgb(106, 101, 101); */
+  /* color: #fff;  */
+
   }
 
   & .select-section {
@@ -506,6 +509,7 @@ country Card
     padding: 0.6rem 2.4rem;
     border-radius: 5rem;
     margin-top: 1rem;
+
   }
 }
 
@@ -569,6 +573,9 @@ contact us Page ends here
 @media screen and (max-width: 980px) {
   .grid-four-cols {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .cat{
+    
   }
 }
 
