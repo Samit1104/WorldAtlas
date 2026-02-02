@@ -39,7 +39,7 @@ export const SearchFilter = ({
                 <div>
                     <select
                         className="select-section"
-                        style={{paddingRight:"3rem"}}
+                        // style={{paddingRight:"3rem"}}
                         value={filter}
                         onChange={handleSelectChange}>
 
