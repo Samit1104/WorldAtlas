@@ -44,7 +44,7 @@ export const SearchFilter = ({
                 <button onClick={() => sortCountries("des")}>Desc</button>
             </div> */}
 
-            <div>
+            {/* <div>
                 <select
                     className="select-section"
                     style={{marginRight:"3rem"}}
@@ -59,7 +59,7 @@ export const SearchFilter = ({
                     <option value="Oceania">Oceania</option>
 
                 </select>
-            </div>
+            </div> */}
         </section>
     );
 };
