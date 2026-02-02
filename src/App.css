@@ -461,20 +461,22 @@ country Card
     background: transparent;
     height: 35px;
     border-radius: 20%;
-    padding: px;
-    margin: 30px;
+    margin: 10px;
     border-bottom:1px solid rgb(185, 184, 184) ;
 
   border: 1px solid white;
 
 
   max-width: 190px;
-  padding: 10px 20px;
   font-size: 16px;
   border-radius: 9999px;
    /* box-shadow: inset 2px 5px 10px rgb(106, 101, 101); */
   color: #fff; 
 
+  }
+
+  .inputpad{
+    padding-right: 1.3rem;
   }
 
   & .select-section {

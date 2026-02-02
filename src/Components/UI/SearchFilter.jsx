@@ -27,7 +27,7 @@ export const SearchFilter = ({
 
     return (
         <section className="section-searchFilter container">
-            <div style={{ width:'100%',display:"flex", justifyContent:"space-between", alignItems:"center"}} className="container">
+            <div style={{ width:'100%',display:"flex", justifyContent:"space-between", alignItems:"center"}} className="inputpad" >
                 <div>
                     <input
                     type="text"
