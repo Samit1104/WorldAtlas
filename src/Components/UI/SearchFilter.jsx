@@ -16,14 +16,14 @@ export const SearchFilter = ({
         setFilter(event.target.value);
     };
 
-    const sortCountries = (value) => {
-        const sortCountry = [...countries].sort((a, b) => {
-            return value === "asc"
-                ? a.name.common.localeCompare(b.name.common)
-                : b.name.common.localeCompare(a.name.common);
-        });
-        setCountries(sortCountry);
-    };
+    // const sortCountries = (value) => {
+    //     const sortCountry = [...countries].sort((a, b) => {
+    //         return value === "asc"
+    //             ? a.name.common.localeCompare(b.name.common)
+    //             : b.name.common.localeCompare(a.name.common);
+    //     });
+    //     setCountries(sortCountry);
+    // };
 
     return (
         <section className="section-searchFilter container">
@@ -36,13 +36,13 @@ export const SearchFilter = ({
                 />
             </div>
 
-            <div>
+            {/* <div>
                 <button onClick={() => sortCountries("asc")}>Asc</button>
             </div>
 
             <div>
                 <button onClick={() => sortCountries("des")}>Desc</button>
-            </div>
+            </div> */}
 
             <div>
                 <select
