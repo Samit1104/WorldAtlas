@@ -644,80 +644,416 @@ contact us Page ends here
 
 
 
-:root {
-  /* Apple-style color palette */
-  --glass-bg: rgba(255, 255, 255, 0.06);
-  --glass-border: rgba(255, 255, 255, 0.125);
-  --apple-blue: #0071e3;
-  --text-main: #f5f5f7;
-  --text-dim: #86868b;
-  --blur-val: 12px;
+/* =========================
+   GLOBAL RESET & VARIABLES
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Base smoothing for Apple feel */
+:root {
+  --bg-dark: #202020;
+  --bg-black: #000000;
+  --text-white: #ffffff;
+  --text-muted: #878787;
+  --accent: #3a4ed5;
+}
+
 html {
   font-size: 62.5%;
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Urbanist", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  scroll-behavior: smooth;
+  font-family: "Urbanist", sans-serif;
 }
 
 body {
-  background: radial-gradient(circle at top left, #1d1d1f, #000000);
-  color: var(--text-main);
-  min-height: 100vh;
+  background-color: var(--bg-black);
+  color: var(--text-white);
 }
 
-/* --- THE GLASS CARD --- */
-.container-card {
-  position: relative;
-  background: var(--glass-bg);
-  backdrop-filter: blur(var(--blur-val)); /* The magic ingredient */
-  -webkit-backdrop-filter: blur(var(--blur-val));
-  border: 1px solid var(--glass-border);
-  border-radius: 24px; /* Slightly softer than your 45px */
-  padding: 3.2rem;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
-  overflow: hidden;
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--text-white);
 }
 
-.container-card:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  border-color: rgba(255, 255, 255, 0.25);
-}
-
-/* --- APPLE-STYLE BUTTONS --- */
+p,
+li,
+a,
 button {
-  background: var(--text-main);
-  color: #000;
-  font-weight: 600;
-  padding: 1.2rem 2.8rem;
-  border-radius: 980px; /* Fully rounded Pill shape */
-  border: none;
-  transition: all 0.2s ease;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
+  letter-spacing: 0.1rem;
+  line-height: 1.6;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: var(--text-white);
+  text-decoration: none;
+}
+
+a:hover {
+  color: #2e86c1;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 0.8rem 2.4rem;
+  background: var(--bg-dark);
+  color: var(--text-white);
+  border: 1px solid #444;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1.6rem;
 }
 
 button:hover {
-  opacity: 0.9;
-  transform: scale(1.02);
+  background: #2a2a2a;
 }
 
-/* --- CLEAN INPUTS --- */
+/* =========================
+   LAYOUT UTILITIES
+========================= */
+
+.container {
+  max-width: 140rem;
+  margin: auto;
+  padding: 0 2rem;
+}
+
+.grid {
+  display: grid;
+  gap: 3.2rem;
+}
+
+.grid-two-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-three-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-four-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* =========================
+   HEADER & NAVBAR
+========================= */
+
+header {
+  height: 10rem;
+  width: 100%;
+  background-color: var(--bg-dark);
+  box-shadow: rgba(255, 255, 255, 0.3) 0px 10px 10px -10px;
+}
+
+.navbar-grid {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  align-items: center;
+  height: 10rem;
+  padding: 0 3.2rem;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  gap: 3.2rem;
+}
+
+.ham-menu {
+  display: none;
+}
+
+/* =========================
+   MOBILE NAV
+========================= */
+
+@media screen and (max-width: 998px) {
+  .menu-web {
+    display: none;
+  }
+
+  .ham-menu {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .menu-mobile {
+    position: absolute;
+    top: 10rem;
+    left: 0;
+    width: 100%;
+    background-color: #0d1212;
+    box-shadow: rgba(255, 255, 255, 0.25) 0px 14px 28px;
+  }
+
+  .menu-mobile ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-mobile li {
+    margin: 1.2rem 0;
+  }
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero-section .container {
+  margin: 9rem auto;
+  gap: 6.4rem;
+}
+
+.heading-xl {
+  font-size: clamp(4rem, 6vw, 5.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.paragraph {
+  margin: 3.2rem 0;
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-image {
+  width: 100%;
+}
+
+@media screen and (max-width: 990px) {
+  .grid-two-cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   ABOUT / CARDS
+========================= */
+
+.section-about {
+  margin-bottom: 9rem;
+}
+
+.gradient-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.2rem;
+}
+
+@media screen and (max-width: 991px) {
+  .gradient-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.container-title {
+  text-align: center;
+  margin-bottom: 4rem;
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+.card {
+  max-width: 55rem;
+  margin-inline: auto;
+}
+
+.container-card {
+  padding: 4rem;
+  border-radius: 4.5rem;
+  background: linear-gradient(71deg, #080509, #1a171c, #080509);
+  position: relative;
+}
+
+.card-title {
+  font-size: 2.8rem;
+  font-weight: 600;
+}
+
+.card-description {
+  font-size: 1.6rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* =========================
+   COUNTRY SECTION
+========================= */
+
+.country-section {
+  margin: 6.4rem auto 9.6rem;
+}
+
+.country-section img {
+  width: 100%;
+  height: 16rem;
+  object-fit: cover;
+}
+
+.country-details-card {
+  margin: 6.4rem auto;
+  box-shadow: rgba(168, 163, 184, 0.15) 0px 48px 100px;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+/* =========================
+   SEARCH & FILTER
+========================= */
+
+.section-searchFilter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3.2rem;
+}
+
 .section-searchFilter input {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid transparent;
-  backdrop-filter: blur(10px);
-  border-radius: 12px;
-  padding: 1.2rem 2rem;
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 9999px;
+  padding: 1rem 2rem;
   color: #fff;
-  transition: border-color 0.3s ease;
+  font-size: 1.6rem;
 }
 
-.section-searchFilter input:focus {
-  border-color: var(--apple-blue);
-  outline: none;
-  background: rgba(255, 255, 255, 0.12);
+::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* =========================
+   CONTACT PAGE
+========================= */
+
+.section-contact {
+  margin: 9.6rem auto;
+}
+
+.contact-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-wrapper form {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  max-width: 48rem;
+  width: 100%;
+}
+
+.contact-wrapper input,
+.contact-wrapper textarea {
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 1.2rem 1.6rem;
+  color: #fff;
+  font-size: 1.6rem;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer-section {
+  background: #151414;
+}
+
+.copyright-area {
+  background: var(--bg-dark);
+  padding: 2.5rem 0;
+}
+
+.copyright-text p {
+  font-size: 1.4rem;
+  color: var(--text-muted);
+}
+
+.footer-menu ul {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+.footer-menu a:hover {
+  color: var(--accent);
+}
+
+/* =========================
+   RESPONSIVE GRID
+========================= */
+
+@media screen and (max-width: 1320px) {
+  .grid-four-cols {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .grid-four-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .grid-four-cols,
+  .grid-three-cols,
+  .grid-two-cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   LOADER
+========================= */
+
+.loader-section {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #25b09b;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
