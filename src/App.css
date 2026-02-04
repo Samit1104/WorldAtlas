@@ -148,6 +148,7 @@ nav ul {
     position: fixed;
     top: 0rem;
     bottom: 0rem;
+    height: 100vh;
     left: 0;
     background-color: #1d1d1f;
     width: 100%;
@@ -292,7 +293,7 @@ nav ul {
 }
 
 .bg-blue-box::after {
-  background: linear-gradient(71deg, #0c0a0e, #5f6fad, #0c0a0e);
+  /* background: linear-gradient(71deg, #0c0a0e, #5f6fad, #0c0a0e); */
 }
 
 .card-title {
@@ -682,7 +683,7 @@ body {
 /* --- THE GLASS CARD --- */
 .container-card {
   position: relative;
-  background: var(--glass-bg);
+  /* background: var(--glass-bg); */
   backdrop-filter: blur(var(--blur-val)); /* The magic ingredient */
   -webkit-backdrop-filter: blur(var(--blur-val));
   border: 1px solid var(--glass-border);
