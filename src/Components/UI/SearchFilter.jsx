@@ -43,7 +43,7 @@ export const SearchFilter = ({
                         value={filter}
                         onChange={handleSelectChange}>
 
-                        <option value="all">All</option>
+                        <option value="all">Continents</option>
                         <option value="Africa">Africa</option>
                         <option value="Americas">Americas</option>
                         <option value="Asia">Asia</option>
